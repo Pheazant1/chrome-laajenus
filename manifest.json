@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Arvonmaaritys Luottoriskit-esikatselu",
+  "version": "1.0.0",
+  "description": "Nayttaa Luottoriskit.fi:n avainluvut arvonmaaritys.fi:n yrityssivuilla.",
+  "host_permissions": [
+    "https://luottoriskit.fi/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://arvonmaaritys.fi/*",
+        "https://www.arvonmaaritys.fi/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
